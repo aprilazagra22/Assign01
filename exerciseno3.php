@@ -1,31 +1,29 @@
-<html>
-<body>
-<form action = "gcd.php" method = "get">
-GCD of two numbers<br>
-1st number: <br>
-<input name = "num1"><br>
-2nd number: <br>
-<input name = "num2"><br>
-<button type = "submit" =">Submit</button><br><br>
+<form action="exerciseno3.php" method="post">
+    <h2>Finding GCD</h2>
+    Input first number: <br><br>
+    <input type="text" name="n1"><br><br>
+    Input second number: <br><br>
+    <input type="text" name="n2"><br><br>
+    <input type="submit" name="submit" value="Submit"> 
+</form>
 
 <?php
+     if(isset ($_POST['submit']))
+     {
+         $n1 = $_POST['n1'];
+         $n2 = $_POST['n2'];
 
-if(isset($_GETp['num1']) || isset($_GET['num2'])){
-    $a = $_GET ['num1'];
-    $b = $_GET ['num2'];
-    echo "GCD of $a and $b = ", gcd($a, $b);
-}
-
-function gcd($a, $b)
-
-{
-    if($b == 0)
-        return $a;
-    return gcd($b, $a % $b);
-}
-
+         if ($n1 > $n2)
+         {
+             $temp = $n1;
+             $n1 = $n2;
+             $n2 = $temp;
+         }
+         for($i = 1; $i < $n1 + 1; $i++)
+         {
+             if($n1 % $i == 0 and $n2 % $i == 0)
+                $GCD = $i;
+         }
+         echo "GCD: ". $GCD;
+     }
 ?>
-
-</form>
-</body>
-</html>
