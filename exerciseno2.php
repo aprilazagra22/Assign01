@@ -24,6 +24,7 @@
     }
     else if(isset($_GET["-"]))
     {
+        
         $this1 = $_GET['num1'];
         $this2 = $_GET['num2'];
         echo $this1 - $this2;
