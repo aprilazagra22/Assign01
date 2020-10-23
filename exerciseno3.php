@@ -22,6 +22,7 @@
          for($i = 1; $i < $n1 + 1; $i++)
          {
              if($n1 % $i == 0 and $n2 % $i == 0)
+                 
                 $GCD = $i;
          }
          echo "GCD: ". $GCD;
